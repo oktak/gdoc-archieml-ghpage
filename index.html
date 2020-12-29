@@ -56,7 +56,7 @@
     </p>
     <p>This approach makes it easy to build SEO friendly websites, with Svelte for interactivity when needed.</p>
     <p>By default all hydrated components are lazy loaded with an intersection observer.</p></div>
-  <div class="right"><div class="clock-component" id="clockwwXyqxbLqS"><svg viewBox="-50 -50 100 100" class="svelte-1mtan91"><circle class="clock-face svelte-1mtan91" r="48"></circle><line class="major svelte-1mtan91" y1="35" y2="45" transform="rotate(0)"></line>
+  <div class="right"><div class="clock-component" id="clockbwwyFtkMMl"><svg viewBox="-50 -50 100 100" class="svelte-1mtan91"><circle class="clock-face svelte-1mtan91" r="48"></circle><line class="major svelte-1mtan91" y1="35" y2="45" transform="rotate(0)"></line>
 
     <line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(6)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(12)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(18)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(24)"></line><line class="major svelte-1mtan91" y1="35" y2="45" transform="rotate(150)"></line>
 
@@ -80,7 +80,7 @@
 
     <line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(306)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(312)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(318)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(324)"></line><line class="major svelte-1mtan91" y1="35" y2="45" transform="rotate(1650)"></line>
 
-    <line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(336)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(342)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(348)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-1mtan91" y1="2" y2="-20" transform="rotate(351.5)"></line><line class="minute svelte-1mtan91" y1="4" y2="-30" transform="rotate(261.4)"></line><g transform="rotate(204)"><line class="second svelte-1mtan91" y1="10" y2="-38"></line><line class="second-counterweight svelte-1mtan91" y1="10" y2="2"></line></g></svg></div></div></div>
+    <line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(336)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(342)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(348)"></line><line class="minor svelte-1mtan91" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-1mtan91" y1="2" y2="-20" transform="rotate(393.5)"></line><line class="minute svelte-1mtan91" y1="4" y2="-30" transform="rotate(42.2)"></line><g transform="rotate(12)"><line class="second svelte-1mtan91" y1="10" y2="-38"></line><line class="second-counterweight svelte-1mtan91" y1="10" y2="2"></line></g></svg></div></div></div>
 
 <h2>The Hook Interface</h2>
 
@@ -473,10 +473,10 @@
       
          
         <script type="module">
-        function initclockwwXyqxbLqS(){
+        function initclockbwwyFtkMMl(){
           import("/_elderjs/svelte/components/Clock.4590820d.js").then((component)=>{
             new component.default({ 
-              target: document.getElementById('clockwwXyqxbLqS'),
+              target: document.getElementById('clockbwwyFtkMMl'),
               props: {},
               hydrate: true
               });
@@ -484,19 +484,19 @@
         }
         
       window.addEventListener('load', function (event) {
-        var observerwwXyqxbLqS = new IntersectionObserver(function(entries, observer) {
+        var observerbwwyFtkMMl = new IntersectionObserver(function(entries, observer) {
           var objK = Object.keys(entries);
           var objKl = objK.length;
           var objKi = 0;
           for (; objKi < objKl; objKi++) {
             var entry = entries[objK[objKi]];
             if (entry.isIntersecting) {
-              observer.unobserve(document.getElementById('clockwwXyqxbLqS'));
+              observer.unobserve(document.getElementById('clockbwwyFtkMMl'));
               if (document.eg_clock) {
-                initclockwwXyqxbLqS();
+                initclockbwwyFtkMMl();
               } else {
                 document.eg_clock = true;
-                initclockwwXyqxbLqS();
+                initclockbwwyFtkMMl();
               }
             }
           }
@@ -504,7 +504,7 @@
           rootMargin: '200px',
           threshold: 0
         });
-        observerwwXyqxbLqS.observe(document.getElementById('clockwwXyqxbLqS'));
+        observerbwwyFtkMMl.observe(document.getElementById('clockbwwyFtkMMl'));
       });
     
         </script>
