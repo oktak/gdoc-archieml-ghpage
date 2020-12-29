@@ -1,0 +1,19 @@
+{
+  "name": "gdoc_2_aml",
+  "version": "0.0.1",
+  "description": "Google Document to ArchieML to JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ArchieML"
+  ],
+  "author": "oktak",
+  "license": "MIT",
+  "dependencies": {
+    "archieml": "^0.4.2",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1"
+  }
+}

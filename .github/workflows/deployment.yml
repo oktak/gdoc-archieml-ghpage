@@ -1,0 +1,67 @@
+name: Fetch and deploy
+
+# ref: https://docs.github.com/en/free-pro-team@latest/actions/quickstart#creating-your-first-workflow
+# ref: https://github.com/timburgan/timburgan/tree/master/.github/workflows
+on:
+  issues:
+    types: [opened]
+
+jobs:
+
+  fetch-and-deploy:
+    name: Google Document to gh-page
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    env:
+      MY_SECRET   : ${{secrets.commit_secret}}
+      USER_NAME   : githubaction
+      USER_EMAIL  : githubaction@fake.com
+      PUBLISH_DIR : ./dist
+
+    if: startsWith(github.event.issue.title, 'deploy|')
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Checkout code
+        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+
+      # Fetch HTML from Google Document, convert to ArchieML, then to JSON
+      - name: Use Node.js
+        working-directory: ./nodeapp
+        run: |
+          yarn install
+          node index.js
+
+      # Build Elder.js
+      - name: Use Elder.js
+        working-directory: ./myapp
+        run: |
+          yarn install
+          npm run build
+
+      # Deploy to GitHub Page branch
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: ./myapp/public # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+
+
+      # - name: Commit files
+      #   run: |
+      #     cd $PUBLISH_DIR
+      #     git init
+      #     git config --local user.name $USER_NAME
+      #     git config --local user.email $USER_EMAIL
+      #     git status
+      #     git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+      #     git checkout -b gh-pages
+      #     git add --all
+      #     git commit -m "deploy to Github pages"
+      #     git push origin gh-pages -f
+      #     echo 🤘 deploy gh-pages complete.
