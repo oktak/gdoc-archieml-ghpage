@@ -37,6 +37,7 @@
   <p>{step1}</p>
 {/each}
 
+<hr>
 
 {#each data.archieml.section1 as section, idx}
   <section class="section-{idx}">

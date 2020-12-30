@@ -29,14 +29,14 @@ jobs:
           persist-credentials: false
 
       # Fetch HTML from Google Document, convert to ArchieML, then to JSON
-      - name: Use Node.js
+      - name: Use Node.js to convert ArchieML
         working-directory: ./nodeapp
         run: |
           yarn install
           node index.js
 
       # Build Elder.js
-      - name: Use Elder.js
+      - name: Use Elder.js to build html
         working-directory: ./myapp
         run: |
           yarn install
